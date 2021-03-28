@@ -40,7 +40,6 @@ function App() {
     
 
     setPokemonDetails(detailsData);
-    console.log(detailsData);
 
   }
 
@@ -53,11 +52,6 @@ function App() {
       }
       return [...prevPokemon, selectedPokemon.id];
     });
-    console.log(clicked);
-  }
-
-  const testState = () => {
-    setView("detailed");
   }
 
   switch (view) {
@@ -71,7 +65,6 @@ function App() {
     default:
       return (
         <div className="App">
-          <button onClick={testState}>Test</button><br></br>
           {
             pokemonDetails.map((p,i) => (
               <Pokemon key={i} pokemon={p} detailedView={detailedView} imgSrc={clicked.indexOf(p.id) > -1 ? p.sprites.front_default : "#"}/>
